@@ -1,11 +1,11 @@
 {
-    "serverAddress": "localhost",
-    "serverName": "Node Y56 Intranet",
+    "serverAddress": "326-3827",
+    "serverName": "Node 1701 Intranet",
     "iconName": "Moon-icon.png",
-    "terminalID": "Y56",
+    "terminalID": "1701-A",
     "defaultUser": {
-        "userId": "user",
-        "password": "",
+        "userId": "acolyte1",
+        "password": "nurgle",
         "userName": "anonymous"
     },
     "randomSeed": true,
