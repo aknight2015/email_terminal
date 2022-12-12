@@ -1,7 +1,7 @@
 {
     "serverAddress": "326-3827",
     "serverName": "Node 1701 Intranet",
-    "iconName": "Moon-icon.png",
+    "iconName": "",
     "terminalID": "1701-A",
     "defaultUser": {
         "userId": "acolyte1",
