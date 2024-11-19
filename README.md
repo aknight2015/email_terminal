@@ -16,6 +16,7 @@ You can host it on Github Pages for a free and fast experience and can share the
 <!-- toc -->
 
 - [Latest News](#latest-news)
+- [Quick launch](#quick-launch)
 - [How to Configure](#how-to-configure)
 - [Customization](#customization)
   * [manifest.json](#manifestjson)
@@ -26,7 +27,6 @@ You can host it on Github Pages for a free and fast experience and can share the
   * [History](#history)
   * [Other Functions](#other-functions)
 - [How to Install](#how-to-install)
-  * [How to Configure for localhost](#how-to-configure-for-localhost)
 - [Future of the Project](#future-of-the-project)
 - [Customization / what to do with this](#customization--what-to-do-with-this)
 - [Acknowledgement](#acknowledgement)
@@ -37,7 +37,7 @@ You can host it on Github Pages for a free and fast experience and can share the
 
 ## Latest News
 
-You can now configure and access extra servers at `network.json` to login via telnet.
+You can now configure and access extra servers at `network.json` to login via `ssh`.
 Each server will treat their respective users (and mail messages) separately.
 
 ---
@@ -55,6 +55,14 @@ You can now show further help instructions for internal commands.
 ---
 ![Help v1](docs/help.gif)
 
+## Quick launch
+
+The following command will launch a HTTP server serving the project files:
+
+```node
+npm start
+```
+
 ## How to Configure
 
 You can upload it to Github Pages or try it on your computer. 
@@ -68,7 +76,7 @@ More configuration files will be added when more functionality shows up.
 
 The main server, which is where the terminal will start, is located as `localhost` at `config/network`.
 
-The `network` folder is where every server available needs to be. This is where you can configure new servers to be accessed via the `telnet` command.
+The `network` folder is where every server available needs to be. This is where you can configure new servers to be accessed via the `ssh` command.
 
 You need to create a folder with the name of the server address if you want to connect to custom servers.
 
@@ -80,7 +88,7 @@ That is, you can't access data of a user configured on `mailserver.json` while y
 The basic configuration at `manifest.json` is what you need to change to customize your terminal.
 You can change the terminal year date, the server name, a customized icon, the terminal identification
 (this is what is written just before the cursor), as well as the default user id and name (normally this will be "user",
-but it can be whatever you want) and if you want a random number to be displayed right in front of the default username (`randomSeed`).
+but it can be whatever you want).
 Note however that, once you login to the server, the username will change.
 
 ```json
@@ -94,8 +102,7 @@ Note however that, once you login to the server, the username will change.
         "userId": "user",
         "password": "",
         "userName": "anonymous"
-    },
-    "randomSeed": true
+    }
 }
 ```
 ---
@@ -112,8 +119,7 @@ Note however that, once you login to the server, the username will change.
         "userId": "user",
         "password": "",
         "userName": "anonymous"
-    },
-    "randomSeed": false
+    }
 }
 ```
 ---
@@ -398,22 +404,12 @@ Note that you can create multiple repositories and name those repositories in th
 
 You just need to share the correct link with your players and wait for them to read the clues and investigate.
 
-### How to Configure for localhost
-
-If you're testing this on your computer, you'll need to install a HTTP server because isn't possible to open and run files for security reasons. You need that for the AJAX to work to access the database file. It will work without problems once it is forked and running as a Github Page.
-
-```node
-npm install http-server -g
-```
-
-Run it as `http-server C:\location\to\app` or just `http-server` if you're inside the directory. You can access it on `127.0.0.1:8080` in your browser. If you're debugging it, consider going to "Network" in the Inspector and disabling the cache.
-
 ## Future of the Project
 
 This is really a simple terminal emulation, as I've said.
 But, there are some things that could be also good to explore, like the creation of some local files or executable programs for the players to interact with.
 
-If you want to, drop some ideas into my Github repository or send me some messages at Reddit (u/jacksonbenete) and we can work out something else.
+If you want to, drop some ideas into my Github repository or send me some messages at Reddit ([u/jacksonbenete](https://www.reddit.com/user/jacksonbenete/)) and we can work out something else.
 
 ## Customization / what to do with this
 This section lists ideas to craft the perfect terminal for your game!
@@ -424,6 +420,7 @@ This section lists ideas to craft the perfect terminal for your game!
   by connecting to them with `telnet SERVERNAME` on [the online terminal](https://krymsonwake.github.io/email_terminal/)
 * hide clues in emails to figure other users **logins** & **passwords**, and also what other **servers** exist!
 * use [Z̶̡̼̰͎̬̔̂̇͑ą̵̨̩̖̺̠̹̯͉̇̇̿́̔̍̈́͋̄̈́̕͠ͅl̸̩̗͖͕̺̩͎̠̹̥͕̿̔̃̾̊̓̄͋͝͝g̸͙̺̬̰̙̯̹̼̲̦̔̾̐͑̒͘͝ô̷̯̹̣̖̤͎̿̽̏̆̐͗̾̋̐̚͘̕ text](https://en.wikipedia.org/wiki/Zalgo_text), like [@JAMacera](https://github.com/JAMacera/email_terminal/blob/master/config/database.json) did
+* usage for a sci-fi ttrpg one-shot: [ParadisPerdu](https://chezsoi.org/lucas/jdr/ParadisPerdu/acte-1/) - [config source](https://github.com/Lucas-C/email_terminal/tree/acte-1) - [scenario (French)](https://github.com/Lucas-C/jdr/tree/master/ParadisPerdu)
 
 Please suggest additions to this list based on your own usage,
 through a GitHub issue/PR or by contacting the author on Reddit.

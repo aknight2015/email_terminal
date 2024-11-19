@@ -8,7 +8,6 @@
         "password": "nurgle",
         "userName": "anonymous"
     },
-    "randomSeed": true,
     "initialHistory": {
         "user": [
             "login admin@admin"
